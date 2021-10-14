@@ -29,6 +29,7 @@ function App() {
   const [cart, addToCart] = useState([])
 
   const fecha = new Date().getFullYear();
+  const enCarrito = true;
 
   return (
     <div className="App">
@@ -39,16 +40,22 @@ function App() {
       <h1>Lista de productos</h1>
       {
         productos.map(producto =>{
-          return <Producto 
-            key={producto.id} 
+          return <Producto
+            setProductos={setProductos}
             productos={productos}
+            key={producto.id} 
             producto={producto}
             cart={cart}
-            addToCart={addToCart}/>;
+            addToCart={addToCart}
+            enCarrito={enCarrito}/>;
         })
       }
       <Carrito 
-      cart={cart}/>
+          cart={cart}
+          addToCart={addToCart}
+          setProductos={setProductos}
+          productos={productos}
+      />
       <Footer 
         fecha={fecha}
       />

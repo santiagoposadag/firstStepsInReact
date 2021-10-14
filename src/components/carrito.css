@@ -1,6 +1,6 @@
 .carrito {
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 1rem;
+    right: 2rem;
     background-color: white;
 }
